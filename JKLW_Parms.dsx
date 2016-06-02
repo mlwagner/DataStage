@@ -1,0 +1,698 @@
+BEGIN HEADER
+   CharacterSet "CP1252"
+   ExportingTool "IBM InfoSphere DataStage Export"
+   ToolVersion "8"
+   ServerName "IS-SERVER.IBM.COM"
+   ToolInstanceID "dstage1"
+   MDISVersion "1.0"
+   Date "2016-06-02"
+   Time "11.10.56"
+   ServerVersion "11.5"
+END HEADER
+BEGIN DSPARAMETERSETS
+   BEGIN DSRECORD
+      Identifier "IIS_MDM_PARMS"
+      DateModified "2016-03-29"
+      TimeModified "10.19.55"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      Description "Parameter set created for retaining job values for the import and export of reference data between RDM and IIS."
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "MDMServer"
+         Prompt "MDM Server Name"
+         Default "mdmdemowin.ibm.com"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "MDMUser"
+         Prompt "MDM User ID"
+         Default "dsadm"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "MDMUserPWD"
+         Prompt "MDM User Password"
+         Default "inf0server"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "MDMInputLocation"
+         Prompt "MDM Input Location"
+         Default "C:\\Program Files (x86)\\IBM\\WebSphere\\AppServer\\profiles\\AppSrv01\\installedApps\\mdmCell\\MDM-native-E001.ear\\native.war\\work\\"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "IISOutputLocation"
+         Prompt "IIS Output Location"
+         Default "/opt/IBM/projects_plus/dev/dstage1/staging/JKLW/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "IIS_RDM_PARMS"
+      DateModified "2016-03-29"
+      TimeModified "10.19.55"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      Description "Parameter set created for retaining job values for the import and export of reference data between RDM and IIS."
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "RDMServer"
+         Prompt "RDMServerName"
+         Default "rdm-server.ibm.com"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMUser"
+         Prompt "RDM User ID"
+         Default "dsadm"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMUserPWD"
+         Prompt "RDM User Password"
+         Default "inf0server"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMScriptLocation"
+         Prompt "RDM Script Location"
+         Default "/opt/IBM/RDM/RDMExport/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMScriptName"
+         Prompt "RDM Script Name"
+         Default "RunBatchExportClient.sh"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMOutputLocation"
+         Prompt "RDM Output Location"
+         Default "/opt/IBM/RDM/RDMExport/output/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMOutputFileFormat"
+         Prompt "RDM Output FileFormat"
+         Default "csv"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMOutputCSVDelimiter"
+         Prompt "RDM Output CSV Delimiter"
+         Default ","
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMOutputCSVWrapper"
+         Prompt "RDM Output CSV Wrapper"
+         Default "\""
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMInputLocation"
+         Prompt "RDM Input Location"
+         Default "/opt/IBM/RDM/RDMImport/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMInputFileFormat"
+         Prompt "RDM Input File Format"
+         Default "xml"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMInputCSVDelimiter"
+         Prompt "RDM Input CSV Delimiter"
+         Default ","
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "IISInputLocation"
+         Prompt "IIS Input Location"
+         Default "/opt/IBM/RDM/From_RDM/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "IISInputFileName"
+         Prompt "IIS Input File Name"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "IISOutputLocation"
+         Prompt "IIS Output Location"
+         Default "/opt/IBM/RDM/To_RDM/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "IISOutputFileName"
+         Prompt "IIS Output File Name"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RDMReferenceDataSetList"
+         Prompt "Reference Data Set List"
+         Default "/opt/IBM/RDM/From_RDM/setlist."
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "JKLW"
+      DateModified "2016-03-29"
+      TimeModified "10.19.55"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "$APT_CONFIG_FILE"
+         Prompt "Configuration file"
+         Default "/opt/IBM/InformationServer/Server/Configurations/default.apt"
+         HelpTxt "The Parallel job configuration file."
+         ParamType "4"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_DUMP_SCORE"
+         Prompt "Report score"
+         Default "False"
+         HelpTxt "If set, the Parallel job will produce a report showing the operators, processes and data sets in a running application."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$OSH_ECHO"
+         Prompt "Report step specification"
+         Default "False"
+         HelpTxt "Causes Parallel job to echo its step specification to standard error after the shell has expanded all arguments."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_RECORD_COUNTS"
+         Prompt "Report record counts"
+         Default "False"
+         HelpTxt "Causes the framework to print, for each operator Player, the number of records consumed by getRecord() and produced by putRecord()."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$OSH_PRINT_SCHEMAS"
+         Prompt "Report schemas"
+         Default "False"
+         HelpTxt "Causes Parallel job to print the record schema of all data sets and the interface schema of all operators."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_PM_SHOW_PIDS"
+         Prompt "Show internal PIDs"
+         Default "False"
+         HelpTxt "If this is set, stage processes (players) will log a message upon startup, displaying their operating system process ID."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_BUFFER_MAXIMUM_TIMEOUT"
+         Prompt "Maximum buffer timeout"
+         Default "1"
+         HelpTxt "The maximum time in seconds between deadlock avoidance buffering retries."
+         ParamType "2"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_DISABLE_COMBINATION"
+         Prompt "Disable operator combination"
+         Default "False"
+         HelpTxt "Prevents operators from being combined into one process."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_EXECUTION_MODE"
+         Prompt "Execution mode"
+         Default "Parallel"
+         HelpTxt "Change the execution mode of the application"
+         ParamType "5"
+         ListValues "Parallel\(9)One process\(9)Many process\(9)No serialize"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_JKLW"
+         Prompt "Projects Plus PATH to JKLW folder"
+         Default "/opt/IBM/projects_plus/dev/dstage1/JKLW/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_DIR"
+         Prompt "Projects Plus Directory"
+         Default "/opt/IBM/projects_plus/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_PHASE"
+         Prompt "Projects Plus Deployment Phase"
+         Default "dev/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_PROJECT"
+         Prompt "Projects Plus DataStage Project"
+         Default "dstage1/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_PARENT"
+         Prompt "Projects Plus DataStage Repository Parent Folder"
+         Default "JKLW/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_DATASETS"
+         Prompt "Projects Plus Datasets Directory"
+         Default "datasets/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_JAVA"
+         Prompt "Projects Plus JAVA Class Path Directory"
+         Default "JAVA/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_LOGS"
+         Prompt "Projects Plus Logs Directory"
+         Default "logs/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_SCHEMAS"
+         Prompt "Projects Plus Schemas Directory"
+         Default "schemas/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_STAGING"
+         Prompt "Projects Plus Data Staging Directory"
+         Default "staging/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_SCRIPTS"
+         Prompt "Projecst Plus Scripts Directory"
+         Default "scripts/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "JKLW_HVC_PARMS"
+      DateModified "2016-03-29"
+      TimeModified "10.19.56"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      ShortDesc "InfoServer Demo HVC Parameters"
+      Description "This parameter set contains the parameters used in the Informaton Server Demo for the calucation of High Value Customers"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "HVCThreshold"
+         Prompt "HVC Dollar Threshold"
+         Default "30000"
+         HelpTxt "Please specify the high value customer dollar threshold"
+         ParamType "2"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "JKLW_LOB_RANGE"
+      DateModified "2016-03-29"
+      TimeModified "10.19.56"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "LOB"
+         Prompt "Line of Business Max"
+         Default "5"
+         HelpTxt "Set the number of LOB to be included in the Data Mart. Valid values:1 - 5"
+         ParamType "2"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "JKLW_PARMS"
+      DateModified "2016-03-29"
+      TimeModified "10.19.56"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "$APT_CONFIG_FILE"
+         Prompt "Configuration file"
+         Default "/opt/IBM/InformationServer/Server/Configurations/default.apt"
+         HelpTxt "The Parallel job configuration file."
+         ParamType "4"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_DUMP_SCORE"
+         Prompt "Report score"
+         Default "False"
+         HelpTxt "If set, the Parallel job will produce a report showing the operators, processes and data sets in a running application."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$OSH_ECHO"
+         Prompt "Report step specification"
+         Default "False"
+         HelpTxt "Causes Parallel job to echo its step specification to standard error after the shell has expanded all arguments."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_RECORD_COUNTS"
+         Prompt "Report record counts"
+         Default "False"
+         HelpTxt "Causes the framework to print, for each operator Player, the number of records consumed by getRecord() and produced by putRecord()."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$OSH_PRINT_SCHEMAS"
+         Prompt "Report schemas"
+         Default "False"
+         HelpTxt "Causes Parallel job to print the record schema of all data sets and the interface schema of all operators."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_PM_SHOW_PIDS"
+         Prompt "Show internal PIDs"
+         Default "False"
+         HelpTxt "If this is set, stage processes (players) will log a message upon startup, displaying their operating system process ID."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_BUFFER_MAXIMUM_TIMEOUT"
+         Prompt "Maximum buffer timeout"
+         Default "1"
+         HelpTxt "The maximum time in seconds between deadlock avoidance buffering retries."
+         ParamType "2"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_DISABLE_COMBINATION"
+         Prompt "Disable operator combination"
+         Default "False"
+         HelpTxt "Prevents operators from being combined into one process."
+         ParamType "5"
+         ListValues "False\(9)True"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$APT_EXECUTION_MODE"
+         Prompt "Execution mode"
+         Default "Parallel"
+         HelpTxt "Change the execution mode of the application"
+         ParamType "5"
+         ListValues "Parallel\(9)One process\(9)Many process\(9)No serialize"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_JKLW"
+         Prompt "Projects Plus PATH to JKLW folder"
+         Default "/opt/IBM/projects_plus/dev/dstage1/JKLW/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$DEPLOY_PHASE"
+         Prompt "Deployment phase"
+         Default "$PROJDEF"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PROJECT_NAME"
+         Prompt "Project name"
+         Default "$PROJDEF"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PROJECT_PLUS_DATASETS"
+         Prompt "Project + Dataset descriptor dir"
+         Default "$PROJDEF"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PROJECT_PLUS_LOGS"
+         Prompt "Project + Log dir"
+         Default "$PROJDEF"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PROJECT_PLUS_PARAMS"
+         Prompt "Project + Parameter file dir"
+         Default "$PROJDEF"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PROJECT_PLUS_SCHEMAS"
+         Prompt "Project + Schema dir"
+         Default "$PROJDEF"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PROJECT_PLUS_SCRIPTS"
+         Prompt "Project + Scripts dir"
+         Default "$PROJDEF"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$STAGING_DIR"
+         Prompt "Staging directory"
+         Default "$PROJDEF"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "JVM_ARGS"
+      DateModified "2016-03-29"
+      TimeModified "10.19.56"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      Description =+=+=+=
+-Djavax.net.ssl.trustStore=/opt/IBM/mdm_datastage/jars/DummyClientTrustFile.jks
+-Djavax.net.ssl.trustStorePassword=WebAS 
+-Djavax.net.ssl.keyStore=/opt/IBM/mdm_datastage/jars/DummyClientKeyFile.jks 
+-Djavax.net.ssl.keyStorePassword=WebAS
+-Djavax.net.ssl.trustStoreType=JKS
+-Djavax.net.ssl.keyStoreType=JKS
+=+=+=+=
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "$CLASSPATH"
+         Prompt "JAVA Class Path"
+         Default =+=+=+=
+/opt/IBM/mdm_datastage/jars/madapi.jar:/opt/IBM/mdm_datastage/jars/com.ibm.mdm.iis.datastage.mdmapi.
+jar:/opt/IBM/mdm_datastage/jars/com.ibm.mdm.mds.jmx.jar:/opt/IBM/mdm_datastage/jars/com.ibm.mdm.mds.
+job.client.jar:/opt/IBM/mdm_datastage/jars/com.ibm.mdm.mds.messages.jar:/opt/IBM/mdm_datastage/jars
+/com.ibm.ws.admin.client_8.5.0.jar:/opt/IBM/mdm_datastage/jars/was_dependencies.jar:
+/opt/IBM/mdm_datastage/jars/was_public.jar
+
+=+=+=+=
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "JVM_ARGS_MDM_GET"
+      DateModified "2016-03-29"
+      TimeModified "10.19.57"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "$CLASSPATH"
+         Prompt "JAVA Class Path"
+         Default "/opt/IBM/mdm_datastage/jars/madapi.jar:/opt/IBM/mdm_datastage/jars/com.ibm.mdm.iis.datastage.mdmapi.jar:/opt/IBM/mdm_datastage/jars/commons-logging.jar"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "JVM_ARGS_MDM_LOAD"
+      DateModified "2016-03-29"
+      TimeModified "10.19.57"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      Description =+=+=+=
+-Djavax.net.ssl.trustStore=/opt/IBM/mdm_datastage/jars/DummyClientTrustFile.jks
+-Djavax.net.ssl.trustStorePassword=WebAS 
+-Djavax.net.ssl.keyStore=/opt/IBM/mdm_datastage/jars/DummyClientKeyFile.jks 
+-Djavax.net.ssl.keyStorePassword=WebAS
+-Djavax.net.ssl.trustStoreType=JKS
+-Djavax.net.ssl.keyStoreType=JKS
+=+=+=+=
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "$CLASSPATH"
+         Prompt "JAVA Class Path"
+         Default "/opt/IBM/mdm_datastage/jars/madapi.jar:/opt/IBM/mdm_datastage/jars/com.ibm.mdm.iis.datastage.mdmapi.jar:/opt/IBM/mdm_datastage/jars/com.ibm.mdm.mds.jmx.jar:/opt/IBM/mdm_datastage/jars/com.ibm.mdm.mds.job.client.jar:/opt/IBM/mdm_datastage/jars/com.ibm.mdm.mds.messages.jar:/opt/IBM/mdm_datastage/jars/com.ibm.ws.admin.client_8.5.0.jar:/opt/IBM/mdm_datastage/jars/was_dependencies.jar:/opt/IBM/mdm_datastage/jars/was_public.jar"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "samp"
+      DateModified "2016-03-29"
+      TimeModified "10.19.57"
+      OLEType "CParameterSet"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\ParameterSets"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "$PP_FOLDER"
+         Prompt "Projects Plus Folder Structure"
+         Default "$PROJDEF"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$PP_DIR"
+         Prompt "Projects Plus Directory"
+         Default "/opt/IBM/projects_plus/"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+   END DSRECORD
+END DSPARAMETERSETS
