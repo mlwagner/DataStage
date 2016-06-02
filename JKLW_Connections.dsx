@@ -1,0 +1,54 @@
+BEGIN HEADER
+   CharacterSet "CP1252"
+   ExportingTool "IBM InfoSphere DataStage Export"
+   ToolVersion "8"
+   ServerName "IS-SERVER.IBM.COM"
+   ToolInstanceID "dstage1"
+   MDISVersion "1.0"
+   Date "2016-06-02"
+   Time "11.09.37"
+   ServerVersion "11.5"
+END HEADER
+BEGIN DSSTAGETYPES
+END DSSTAGETYPES
+BEGIN DSDATACONNECTIONS
+   BEGIN DSRECORD
+      Identifier "JKLW_DBS"
+      DateModified "2016-06-01"
+      TimeModified "13.16.07"
+      OLEType "CDataConnection"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\Connections"
+      Parameters "CParamValues"
+      BEGIN DSSUBRECORD
+         Name "Instance"
+         ValueType "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DB2ClientLibFile"
+         ValueType "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Conductor"
+         Description "0"
+         ValueType "0"
+      END DSSUBRECORD
+      StageType "DB2ConnectorPX"
+      UserName "db2inst1"
+      Password "{iisenc}uzWEqV7vNOIBNYcTnwBtYg=="
+      ConnectionString "JKLW_DBS"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "JKLW_ODS_ODBC"
+      DateModified "2016-03-29"
+      TimeModified "10.12.13"
+      OLEType "CDataConnection"
+      Readonly "0"
+      Category "\\JKLW\\SHARED\\Connections"
+      ShortDesc "Data Connection for JKLW_DB"
+      StageType "ODBCConnectorPX"
+      UserName "db2inst1"
+      Password "LE8@08V@?=3=0O5I<;J<BKA5B4OMM2"
+      ConnectionString "JKLW_ODS"
+   END DSRECORD
+END DSDATACONNECTIONS
